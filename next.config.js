@@ -1,27 +1,28 @@
-module.exports = {
+const { PHASE_DEVELOPMENT_SERVER } = require("next/constants")
+
+module.exports = (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+    return {
+      env: {
+        DB: "mongodb+srv://SebAlam:Mmilo123@cluster0.lb1qj.mongodb.net/bookit?retryWrites=true&w=majority",
+        CLOUDINARY_CLOUD_NAME: "dfreqlhvc",
+        CLOUDINARY_API_KEY: "765885894368911",
+        CLOUDINARY_API_SECRET: "_kxbMRYiZy7UN_qVM8E3FndXTOg",
+      },
+      images: {
+        domains: ["res.cloudinary.com"],
+      },
+    }
+  }
+  return {
     env: {
-        DB_LOCAL_URI: '',
-        DB_URI: '',
-
-        STRIPE_API_KEY: '',
-        STRIPE_SECRET_KEY: '',
-
-        STRIPE_WEBHOOK_SECRET: '',
-
-        CLOUDINARY_CLOUD_NAME: '',
-        CLOUDINARY_API_KEY: '',
-        CLOUDINARY_API_SECRET: '',
-
-        SMTP_HOST: "",
-        SMTP_PORT: "",
-        SMTP_USER: "",
-        SMTP_PASSWORD: "",
-        SMTP_FROM_EMAIL: "",
-        SMTP_FROM_NAME: "",
-
-        NEXTAUTH_URL: '',
+      DB: "mongodb+srv://SebAlam:Mmilo123@cluster0.lb1qj.mongodb.net/bookit?retryWrites=true&w=majority",
+      CLOUDINARY_CLOUD_NAME: "dfreqlhvc",
+      CLOUDINARY_API_KEY: "765885894368911",
+      CLOUDINARY_API_SECRET: "_kxbMRYiZy7UN_qVM8E3FndXTOg",
     },
     images: {
-        domains: ['res.cloudinary.com'],
+      domains: ["res.cloudinary.com"],
     },
+  }
 }
